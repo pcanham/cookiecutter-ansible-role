@@ -1,0 +1,36 @@
+---
+{% raw -%}
+- name: include variable overrides
+  include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+        - "vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+        - "vars/{{ ansible_distribution }}.yml"
+        - "vars/{{ ansible_os_family }}.yml"
+        - "vars/main.yml"
+{%- endraw %}
+  tags:
+    - {{ cookiecutter.role_name }}
+
+- name: install {{ cookiecutter.role_name }} packages
+  become: yes
+  package:
+    name: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_names {{ '}}' }}"
+    state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_package_state {{ '}}' }}"
+
+# - name: configure {{ cookiecutter.role_name }}
+#   become: yes
+#   template:
+#     src: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_conf_template {{ '}}' }}"
+#     dest: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_conf_path {{ '}}' }}"
+#   notify:
+#     - restart {{ cookiecutter.role_name }}
+#
+# - name: manage {{ cookiecutter.role_name }} services
+#   become: yes
+#   service:
+{%- raw %}
+#     name: "{{ item }}"
+{%- endraw %}
+#     state: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_service_status {{ '}}' }}"
+#   with_items: "{{ '{{' }} {{ cookiecutter.role_name | replace('-', '_') }}_service_names {{ '}}' }}"
