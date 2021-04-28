@@ -2,10 +2,10 @@
   "author_name": "Paul Canham",
   "galaxy_user": "pcanham",
   "galaxy_namespace": "pcanham",
-  "git_url": "",
   "role_name": "template",
   "role_short_description": "{{ 'An Ansible role to install and configure ' + cookiecutter.role_name }}",
   "project_name": "{{ 'ansible-role-' + cookiecutter.role_name }}",
+  "git_url": "https://github.com/{{ cookiecutter.galaxy_user }}/{{ cookiecutter.project_name }}.git",
   "release_year": "{% now 'local', '%Y' %}",
   "license": ["MIT", "BSD", "GPLv2", "GPLv3", "Apache", "CC-BY"],
   "_copy_without_render": [".chglog/CHANGELOG.tpl.md"]
