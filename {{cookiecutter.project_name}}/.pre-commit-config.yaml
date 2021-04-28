@@ -1,6 +1,6 @@
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.4.0
+    rev: v3.4.0
     hooks:
     - id: trailing-whitespace
     - id: check-json
@@ -8,7 +8,7 @@ repos:
     - id: detect-aws-credentials
 # Ansible linter
 -   repo: https://github.com/ansible/ansible-lint
-    rev: v4.2.0
+    rev: v5.0.7
     hooks:
     -   id: ansible-lint
         exclude: >
