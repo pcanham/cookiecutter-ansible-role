@@ -1,6 +1,8 @@
 {
   "author_name": "Paul Canham",
   "galaxy_user": "pcanham",
+  "galaxy_namespace": "pcanham",
+  "git_url": "",
   "role_name": "template",
   "role_short_description": "{{ 'An Ansible role to install and configure ' + cookiecutter.role_name }}",
   "project_name": "{{ 'ansible-role-' + cookiecutter.role_name }}",
