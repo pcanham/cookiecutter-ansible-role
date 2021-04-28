@@ -8,5 +8,5 @@
   "git_url": "https://github.com/{{ cookiecutter.galaxy_user }}/{{ cookiecutter.project_name }}.git",
   "release_year": "{% now 'local', '%Y' %}",
   "license": ["MIT", "BSD", "GPLv2", "GPLv3", "Apache", "CC-BY"],
-  "_copy_without_render": [".chglog/CHANGELOG.tpl.md", "molecule/default/create.yml"]
+  "_copy_without_render": [".chglog/CHANGELOG.tpl.md", "molecule/default/create.yml", "molecule/default/destroy.yml"]
 }
